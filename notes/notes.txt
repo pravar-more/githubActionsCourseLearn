@@ -72,26 +72,26 @@ LOCATION:     .github/workflows/workflowFile1.yaml
 >>>>
 
 name: First Workflow
-on: [push]                        #the events to be triggered
+on: [push]                                                   #the events to be triggered
 
-jobs:                             # jobs array with job object having 'jobs' as key
-    run-shell-commands:           #this is a job objedct in here we will be defining steps, platform or os to run our job 
-    runs-on: ubuntu-latest                                          #defining platform    
-    steps:                        #now we will defining the steps
-        - name: echo a string                        # object for each steps containig a name, defining what to do here echo a string 
-           run: echo "hello World"                    # now the shell command to perform the task
-        - name: multiline commands
-          run: |                                      #  | pipe character to define multiple lines of commands
-            node -v            #just checking the version
-            npm -v
-
-
-
-
-
-
-
-
+jobs:                                                        # jobs array with job object having 'jobs' as key
+    run-shell-commands:                                      #this is a job objedct in here we will be defining steps, platform or os to run our job 
+        runs-on: ubuntu-latest                               #defining platform    
+        steps:                        #now we will defining the steps
+            - name: echo a string                            # object for each steps containig a name, defining what to do here echo a string 
+               run: echo "hello World"                       # now the shell command to perform the task
+            - name: multiline commands
+              run: |                                         #  | pipe character to define multiple lines of commands
+                node -v            #just checking the version
+                npm -v
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 
