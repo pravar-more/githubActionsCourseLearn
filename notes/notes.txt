@@ -10,6 +10,12 @@ Events:
   external events: sending a POST request to a REST API
   Schedule Time:
   MAnually: pressing the run workflow button
+Events are the triggers that start your workflows. These could be activities like pushing code to a repository, creating a pull request, or scheduling a time-based event. Some common events include:
+    push: Triggered when code is pushed to a repository.
+    pull_request: Triggered when a pull request is created or updated.
+    schedule: Triggered based on a cron schedule.
+    workflow_dispatch: Manually triggered by a user.
+
 
 Runner MAchine:
   github hosted runners : win, linux, macos with tools installed
@@ -18,6 +24,7 @@ Runner MAchine:
 
 * JOB runs on the Runner MAchine
 * JOBS can run parallel
+* Actions are the individual tasks that make up your jobs
 * also can schedule
 
 YAML Format
@@ -48,3 +55,43 @@ YAML Format
         - 0.5   --> numvber
         - key : value
           another_key: value
+        - - nested array item
+          - nested array item2
+    * literal block: |
+        first line
+
+        second line
+    * folded block: >
+        first line
+        second line
+
+-------------------------------------------------------------------
+
+###first workbook:
+LOCATION:     .github/workflows/workflowFile1.yaml
+>>>>
+
+name: First Workflow
+on: [push]                        #the events to be triggered
+
+jobs:                             # jobs array with job object having 'jobs' as key
+    run-shell-commands:           #this is a job objedct in here we will be defining steps, platform or os to run our job 
+    runs-on: ubuntu-latest                                          #defining platform    
+    steps:                        #now we will defining the steps
+        - name: echo a string                        # object for each steps containig a name, defining what to do here echo a string 
+           run: echo "hello World"                    # now the shell command to perform the task
+        - name: multiline commands
+          run: |                                      #  | pipe character to define multiple lines of commands
+            node -v            #just checking the version
+            npm -v
+
+
+
+
+
+
+
+
+
+
+
