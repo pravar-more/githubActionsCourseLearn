@@ -1,0 +1,20 @@
+Workflow File Tasks:
+    testing your code
+    sending a slack message
+    publishing a package
+    openeing an issue 
+    deploying applications
+
+Events:
+  Repos events: push pullm request, issue
+  external events: sending a POST request to a REST API
+  Schedule Time:
+  MAnually: pressing the run workflow button
+
+Runner MAchine:
+  github hosted runners : win, linux, macos with tools installed
+  self hosted runners: more customizable, more control over hardware, install packages.
+  large runners: with more RAM & CPU
+
+
+  
