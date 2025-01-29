@@ -26,5 +26,25 @@ YAML Format
     * "key with quotes" : "value within quotes"     --> are permitted
     * special_chars: "special: characters"
     * excape characters --> "\u263A \u263B \n"    --> have to be in double quotes
-    * 
-  
+    * array:
+        - item1
+        - item2
+    * json array: [item1,item2]
+    * numbers: 100
+    * boolean: true/false
+    * null =  null
+    * also_null = ~
+    
+    * object (maps):
+        key:value
+        another: value
+        nested_object:
+            nested_key: value
+
+    * json style object
+    * sequence:
+        - item1
+        - item2
+        - 0.5   --> numvber
+        - key : value
+          another_key: value
