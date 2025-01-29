@@ -75,7 +75,7 @@ name: First Workflow
 on: [push]                                                   #the events to be triggered
 
 jobs:                                                        # jobs array with job object having 'jobs' as key
-    run-shell-commands:                                      #this is a job objedct in here we will be defining steps, platform or os to run our job 
+    run-shell-commands:                                      # job no. 1 this is a job objedct in here we will be defining steps, platform or os to run our job 
         runs-on: ubuntu-latest                               #defining platform    
         steps:                        #now we will defining the steps
             - name: echo a string                            # object for each steps containig a name, defining what to do here echo a string 
@@ -84,9 +84,30 @@ jobs:                                                        # jobs array with j
               run: |                                         #  | pipe character to define multiple lines of commands
                 node -v            #just checking the version
                 npm -v
+
+    parallel-job:                                            #job no. 2
+        runs-on: macos-latest
+        steps:
+            - name: view SW version                            # some macos specific tasks and commands
+              run: sw_vers
+    dependent-job:                                            #job no. 3
+        runs-on: windows-latest
+        needs: run-shell-commands                             #this key is added to make the job dependent on another ... it can have jobid or [array of job id]
+        steps:
+            - name: echo a string
+              run: Write-output "Windows String dependent on run-shell-commands job"
+            - name: this is an error task, command not correct
+              run: doesnotexists                             # incorrect command to get an error
     
-    
-    
+-------------------------------------------------------------------
+
+
+
+
+multiple jobs:
+    * we can run jobs, parallel, independent, or be configured to be dependent
+    * runs on their own runner macine
+
     
     
     
