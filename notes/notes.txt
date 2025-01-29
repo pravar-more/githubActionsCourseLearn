@@ -16,5 +16,15 @@ Runner MAchine:
   self hosted runners: more customizable, more control over hardware, install packages.
   large runners: with more RAM & CPU
 
+* JOB runs on the Runner MAchine
+* JOBS can run parallel
+* also can schedule
 
+YAML Format
+    is superset of json
+    * key: value
+    * "key with quotes" : "value within quotes"     --> are permitted
+    * special_chars: "special: characters"
+    * excape characters --> "\u263A \u263B \n"    --> have to be in double quotes
+    * 
   
