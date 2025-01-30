@@ -10,20 +10,19 @@ jobs:
         run: |
           node -v
           npm -v   
-    parallel-job-macos:
-      runs-on: macos-latest
-      steps:
-        - name: view sw version
-          run: sw_vers
-    dependent-job:
-      runs-on: windows-latest
-      needs: run-shell-commands
-      steps:
-        - name: echo a string
-          run: Write-Output "windows string dependent on run-shell-command job"
-        - name: error task, commands are not correct
-          run: doesnotexists                  #incorect command
-
+  parallel-job-macos:
+    runs-on: macos-latest
+    steps:
+      - name: view sw version
+        run: sw_vers
+  dependent-job:
+    runs-on: windows-latest
+    needs: run-shell-commands
+    steps:
+      - name: echo a string
+        run: Write-Output "windows string dependent on run-shell-command job"
+      - name: error task, commands are not correct
+        run: doesnotexists                  
 
 
 
