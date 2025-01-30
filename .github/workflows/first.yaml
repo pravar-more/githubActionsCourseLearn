@@ -18,9 +18,14 @@ jobs:
     dependent-job:
       runs-on: windows-latest
       needs: run-shell-commands
-      
+      steps:
+        - name: echo a string
+          run: Write-output "windows string dependent on run-shell-command job"
+        - name: error task, commands are not correct
+          run: doesnotexists                  #incorect command
 
 
 
 
-    
+
+          
