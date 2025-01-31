@@ -13,7 +13,7 @@ jobs:
       - name: warning message
         run: echo "::warning title:Warning title, file = noFile.js, line=2, endLine=4, col=3, endColumn=4::ITs a warning"
       - name: notice message with params
-        run: echo "::notice title:Notice title, file = noFile.js, line=2, endLine=4, col=2, endColumn=5: It is a notice"
+        run: echo "::notice title:Notice title, file = noFile.js, line=2, endLine=4, col=2, endColumn=5:: It is a notice"
       - name: group of logs
         run: |
           echo "::group::My group title"
