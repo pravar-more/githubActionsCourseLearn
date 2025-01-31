@@ -7,13 +7,13 @@ jobs:
       - name: setting an error message
         run: echo "::error::Missing semicolon"
       - name: error messages with parameters
-        run: echo "::error title:Error title, file=noFile.js, line = 3, endLine= 5, col=5, endColumn=7::Its an error"
+        run: echo "::error title=Error title, file=noFile.js, line = 3, endLine= 5, col=5, endColumn=7::Its an error"
       - name: debug message with param
-        run: echo "::debug title:Debug title, file= noFile.js, line=3, endLine=4, col=4,endColumn=5::Its a Debug"
+        run: echo "::debug title=Debug title, file= noFile.js, line=3, endLine=4, col=4,endColumn=5::Its a Debug"
       - name: warning message
-        run: echo "::warning title:Warning title, file = noFile.js, line=2, endLine=4, col=3, endColumn=4::ITs a warning"
+        run: echo "::warning title=Warning title, file = noFile.js, line=2, endLine=4, col=3, endColumn=4::ITs a warning"
       - name: notice message with params
-        run: echo "::notice title:Notice title, file = noFile.js, line=2, endLine=4, col=2, endColumn=5::It is a notice"
+        run: echo "::notice title=Notice title, file = noFile.js, line=2, endLine=4, col=2, endColumn=5::It is a notice"
       - name: group of logs
         run: |
           echo "::group::My group title"
