@@ -22,7 +22,7 @@ jobs:
       - name: masking a value
         run: echo "::add-mask::Secret String"
       - name: secret string echo
-        run: echo "Secret String"
+        run: echo "Secret String here"
 
 
 
