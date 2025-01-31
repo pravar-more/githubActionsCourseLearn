@@ -143,6 +143,54 @@ Debuging the workflow
         * these will add more logs to our log archive and log files
         * 
     
+-------------------------------------------------------------------    
+*****
+Skip Workflow to run
+    if in commit message
+    git commit -m "message [The_string]"
+    [The_string] = actions skip, skip ci, ci skip, no ci
+    if this is the message with the string, it will skip the run of the recent commit.
+
+
+***** 
+WORKFLOW COMMANDS:
+
+?>>>>
+name: Workflow Commands
+on: [push]
+
+jobs:
+    testing-wf-commands:                #1st job
+        runs-on: ubuntu-latest
+        steps:     
+            - name: Setting an error message        
+              run: echo "::error::Missing semicolon"        #::error:: is the code to display error message. This does not let the workflow fail.
+            - name: setting error message with parameters
+              run: echo "::error title=Error title, file=<file name>, line=<specify line no.> ,endLine=<line number>, col=<column>, endColumn=<>::<Errormessage>"                                            #the error message can be = missing semicolon   -->these are all just echos, to let run the workflow. In this task of the job we are declaring 
+            - name: setting debug message with parameters
+              run: echo "::debug title=debug title, file=<file name>, line=<specify line no.> ,endLine=<line number>, col=<column>, endColumn=<>::<DebugMessage>"
+            - name: setting warning message with parameters
+              run: echo "::warning title=warning title, file=<file name>, line=<specify line no.> ,endLine=<line number>, col=<column>, endColumn=<>::<WarningMessage>"
+            - name: setting notice message with parameters
+              run: echo "::notice title=notice title, file=<file name>, line=<specify line no.> ,endLine=<line number>, col=<column>, endColumn=<>::<NoticeMessage>" 
+              
+    
+-------------------------------------------------------------------    
+
+-------------------------------------------------------------------    
+
+-------------------------------------------------------------------    
+
+-------------------------------------------------------------------    
+
+-------------------------------------------------------------------    
+
+-------------------------------------------------------------------    
+
+-------------------------------------------------------------------    
+
+-------------------------------------------------------------------    
+
 
 
 
