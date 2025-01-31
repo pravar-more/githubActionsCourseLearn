@@ -124,9 +124,24 @@ Visua;ization & manage of github workflows-->
             * gh workflow list
             * gh workflow disable "<name of workflow>"
             * gh workflow enable "<name of workflow>"
+            ****
+            SET github hosted runners
+            * rightclick repo, open > goto the organization > settings > actions > runners > github hosted runners > can monitor currently running jobs
+            
 
+-------------------------------------------------------------------    
 
-    
+Debuging the workflow
+    from the logs
+    note the helpfuls-->
+            * use the search bar
+            * if clicked onthe line will get embedded in the url can be shared
+            * download log files
+            * enabling debug logging
+        * REPO settings > secrets and vaiables > variable = "ACTIONS_STEP_DEBUG" value = "true"
+        * secrets and vairables > variable= "ACTIONS_RUNNER_DEBUG"  value = true
+        * these will add more logs to our log archive and log files
+        * 
     
 
 
