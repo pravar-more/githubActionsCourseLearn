@@ -166,13 +166,13 @@ jobs:
             - name: Setting an error message        
               run: echo "::error::Missing semicolon"        #::error:: is the code to display error message. This does not let the workflow fail.
             - name: setting error message with parameters
-              run: echo "::error title=Error title, file=<file name>, line=<specify line no.> ,endLine=<line number>, col=<column>, endColumn=<>::<Errormessage>"                                            #the error message can be = missing semicolon   -->these are all just echos, to let run the workflow. In this task of the job we are declaring 
+              run: echo "::error title:Error title, file=<file name>, line=<specify line no.> ,endLine=<line number>, col=<column>, endColumn=<>::<Errormessage>"                                            #the error message can be = missing semicolon   -->these are all just echos, to let run the workflow. In this task of the job we are declaring 
             - name: setting debug message with parameters
-              run: echo "::debug title=debug title, file=<file name>, line=<specify line no.> ,endLine=<line number>, col=<column>, endColumn=<>::<DebugMessage>"
+              run: echo "::debug title:debug title, file=<file name>, line=<specify line no.> ,endLine=<line number>, col=<column>, endColumn=<>::<DebugMessage>"
             - name: setting warning message with parameters
-              run: echo "::warning title=warning title, file=<file name>, line=<specify line no.> ,endLine=<line number>, col=<column>, endColumn=<>::<WarningMessage>"
+              run: echo "::warning title:warning title, file=<file name>, line=<specify line no.> ,endLine=<line number>, col=<column>, endColumn=<>::<WarningMessage>"
             - name: setting notice message with parameters
-              run: echo "::notice title=notice title, file=<file name>, line=<specify line no.> ,endLine=<line number>, col=<column>, endColumn=<>::<NoticeMessage>" 
+              run: echo "::notice title:notice title, file=<file name>, line=<specify line no.> ,endLine=<line number>, col=<column>, endColumn=<>::<NoticeMessage>" 
               
             - name: group of logs                                          #to display group of messages,
                run: |
