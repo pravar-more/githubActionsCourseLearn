@@ -174,7 +174,16 @@ jobs:
             - name: setting notice message with parameters
               run: echo "::notice title=notice title, file=<file name>, line=<specify line no.> ,endLine=<line number>, col=<column>, endColumn=<>::<NoticeMessage>" 
               
-    
+            - name: group of logs                                          #to display group of messages,
+               run: |
+                echo "::group::My group title"
+                echo "Inside group"
+                echo "::endgroup::"                                        #this is the end, so whatever in between group and endgroup can be seen from dropdown in github webapp logs.
+            - name: masking a value                                                 # like masking a string that is sensitive and not to be displayed in logs
+              run: echo "::add-mask::Secret String here"
+            - name: Echo the secret string
+              run: echo "Secret String here"
+
 -------------------------------------------------------------------    
 
 -------------------------------------------------------------------    
