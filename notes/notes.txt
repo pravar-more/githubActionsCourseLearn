@@ -101,16 +101,31 @@ jobs:                                                        # jobs array with j
     
 -------------------------------------------------------------------
 
-
-
-
 multiple jobs:
     * we can run jobs, parallel, independent, or be configured to be dependent
     * runs on their own runner macine
 
     
+-------------------------------------------------------------------    
+
+Visua;ization & manage of github workflows-->
+
+--> Github WepApp UI
+    * can disable the run of workflow, ( like even if on:[push] and file is updated, it will prevent workflow from running.)
+    * option to re-run all jobs, failed jobs, we can check the enable debug logging to display more debug info
     
-    
+
+
+
+--> Github CLI   (brew install gh)
+    commands:     
+            * gh workflow view "<name of workflow>"    here "first Workflow"
+              will provide with workflow file name, id, total runs counr, recent runs, success, pending, failed.
+            * gh workflow list
+            * gh workflow disable "<name of workflow>"
+            * gh workflow enable "<name of workflow>"
+
+
     
     
 
