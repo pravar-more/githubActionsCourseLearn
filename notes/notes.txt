@@ -78,7 +78,10 @@ $GITHUB_ACTOR  ==> github username
 secrets.GITHUB_TOKEN  ==> saved in secrets the github token used for a token genreated when we are using github actions
 >>>>> can get the github repo url by this -->
         " https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git "
--------------------------------------------------------------------
+
+------------------------------------------------------------------- 
+------------------------------------------------------------------- 
+------------------------------------------------------------------- 
 
 ###first workbook:
 LOCATION:     .github/workflows/workflowFile1.yaml
@@ -91,6 +94,11 @@ on:                                                          # this on when the 
     push:
         branch:
             - main
+on: 
+    schedule:
+        - cron: '0 0 * * *'                                # runs at midnight UTC every day
+        - cron: "0 2 * * 1-5"                              # every day of the week from Monday to Friday at 2:00 UTC
+        
 defualts:
     run:
         shell: bash                                           # defining a default shell, runs-on, working dir, for all the jobs
