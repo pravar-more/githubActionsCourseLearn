@@ -1,0 +1,10 @@
+name: test worrflow
+on: [push]
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print hello 
+        run: echo "HEllo"
+      - name: ip read
+        run: sudo ip a s
