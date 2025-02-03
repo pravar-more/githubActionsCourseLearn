@@ -67,6 +67,19 @@ YAML Format
 
 -------------------------------------------------------------------
 
+GITHUB ENV VARIABLES
+
+$env:GITHUB_SHA ==> to access on windows pwsh can do Write-Output $env:GITHUB_SHA
+
+$GITHUB_SHA
+$GITHUB_REPOSITORY
+$GITHUB_WORKSPACE
+$GITHUB_ACTOR  ==> github username
+secrets.GITHUB_TOKEN  ==> saved in secrets the github token used for a token genreated when we are using github actions
+>>>>> can get the github repo url by this -->
+        " https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git "
+-------------------------------------------------------------------
+
 ###first workbook:
 LOCATION:     .github/workflows/workflowFile1.yaml
 >>>>
@@ -125,8 +138,6 @@ jobs:                                                        # jobs array with j
                 Get-Location
                 dir
                 Write-Output $env:GITHUB_SHA
-                Write-Output $env:GITHUB_REPOSITORY
-                Write-Output $env:GITHUB_WORKSPACE
     build:                                                    #  A build job
         runs-on: ubuntu-latest
         strategy:                                             # the strategy is defined to control the behaviour of job to get retire  because if it fails in multiple attempts the workflow status marked as failed, >> can configure the workflow to stop all further job executions if a job fails multiple times, or to continue trying other jobs even if one fails.
