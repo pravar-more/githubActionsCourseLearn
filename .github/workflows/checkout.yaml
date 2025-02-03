@@ -10,6 +10,7 @@ jobs:
     steps: 
       - name: list files before
         run: ls -a
+        
       - name: checkout
         run: |
           git init
@@ -19,6 +20,6 @@ jobs:
           git branch
           echo "__________"
           git checkout main
-        - name: list files after
-          run: ls -a
+      - name: list files after
+        run: ls -a
           
