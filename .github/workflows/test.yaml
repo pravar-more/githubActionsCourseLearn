@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print hello 
-        run: echo "HEllo"
+        run: echo "HElloo"
       - name: ip read
         run: sudo ip a s
