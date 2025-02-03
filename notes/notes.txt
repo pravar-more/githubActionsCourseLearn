@@ -78,6 +78,10 @@ on:                                                          # this on when the 
     push:
         branch:
             - main
+defualts:
+    run:
+        shell: bash                                           # defining a default shell, runs-on, working dir, for all the jobs
+        working-directory: <if we want an custom or required location>
 
 jobs:                                                        # jobs array with job object having 'jobs' as key
     run-shell-commands:                                      # job no. 1 this is a job objedct in here we will be defining steps, platform or os to run our job 
