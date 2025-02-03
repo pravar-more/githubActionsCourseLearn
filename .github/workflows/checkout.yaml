@@ -1,5 +1,8 @@
 name: checkout
 on: [push]
+defaults:
+  run:
+    shell: bash
 
 jobs:
   checkout-and-display-files:
