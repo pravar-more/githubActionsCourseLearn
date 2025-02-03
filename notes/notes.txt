@@ -13,13 +13,18 @@ workflow:
         sending a slack message
         openeing an issue 
         deploying applications
+>>>>>
+A workflow can contain one or more jobs and each job can have multiple steps.
 
+
+------------------------------------------------------------------- 
 
 Events:
   Repos events: push pullm request, issue
   external events: sending a POST request to a REST API
   Schedule Time:
-  MAnually: pressing the run workflow button
+  Manually: pressing the run workflow button
+
 Events are the triggers that start your workflows. These could be activities like pushing code to a repository, creating a pull request, or scheduling a time-based event. Some common events include:
     push: Triggered when code is pushed to a repository.
     pull_request: Triggered when a pull request is created or updated.
@@ -32,7 +37,7 @@ Runner MAchine:
   self hosted runners: more customizable, more control over hardware, install packages.
   large runners: with more RAM & CPU
 
-* JOB runs on the Runner MAchine
+* JOB runs on the Runner Machine
 * JOBS can run parallel
 * Actions are the individual tasks that make up your jobs
 * also can schedule
@@ -42,7 +47,7 @@ YAML Format
     * key: value
     * "key with quotes" : "value within quotes"     --> are permitted
     * special_chars: "special: characters"
-    * excape characters --> "\u263A \u263B \n"    --> have to be in double quotes
+    * excape characters --> "\u263A \u263B \n"      --> have to be in double quotes
     * array:
         - item1
         - item2
