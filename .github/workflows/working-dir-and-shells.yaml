@@ -39,4 +39,15 @@ jobs:
           Write-Output $env:GITHUB_SHA
           Write-Output $env:GITHUB_REPOSITORY
           Write-Output $env:GITHUB_WORKSPACE
+
+  python-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: python script
+        shell: python
+        run: |
+          import platform 
+          print(platform.processor())
+      
+        
         
