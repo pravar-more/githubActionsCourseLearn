@@ -41,7 +41,7 @@ jobs:
           Write-Output $env:GITHUB_WORKSPACE
 
   python-job:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: python script
         shell: python
