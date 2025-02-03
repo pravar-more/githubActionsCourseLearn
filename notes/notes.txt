@@ -100,12 +100,21 @@ jobs:                                                        # jobs array with j
         defaults:
             run:
                 shell: pwsh                                   # definign the default shell to run the job, here pwsh = powershell
-        needs: run-shell-commands                             #this key is added to make the job dependent on another ... it can have job-id or [array of job id]
+        
+            needs: run-shell-commands                             #this key is added to make the job dependent on another ... it can have job-id or [array of job id]
         steps:
             - name: echo a string
               run: Write-Output "Windows String dependent on run-shell-commands job"
             - name: this is an error task, command not correct
               run: doesnotexists                             # incorrect command to get an error
+              
+            - name: github env values
+              run: |
+                Get-Location
+                dir
+                Write-Output $env:GITHUB_SHA
+                Write-Output $env:GITHUB_REPOSITORY
+                Write-Output $env:GITHUB_WORKSPACE
     
 -------------------------------------------------------------------
 
