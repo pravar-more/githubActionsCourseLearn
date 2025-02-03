@@ -8,3 +8,8 @@ jobs:
         run: echo "HElloo"
       - name: ip read
         run: sudo ip a s
+  second-job-parrallel:
+    runs-on: windows-latest
+    steps:
+      - name: ip info
+        run: ipconfig
