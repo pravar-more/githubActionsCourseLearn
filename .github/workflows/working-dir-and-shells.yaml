@@ -1,1 +1,26 @@
+name: working dir & shells
+on: [push]
+jobs:
+  display-wd-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: wd path and list
+        run: |
+          pwd
+          ls -al
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
 
+  display-wd-info-WINDOWS:
+    runs-on: ubuntu-latest
+    needs: display-wd-info
+    steps:
+      - name: wd path and list
+        run: |
+          pwd
+          ls -al
+          Write-Output $GITHUB_SHA
+          Write-Output $GITHUB_REPOSITORY
+          Write-Output $GITHUB_WORKSPACE
+        
