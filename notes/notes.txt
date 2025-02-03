@@ -94,6 +94,14 @@ jobs:                                                        # jobs array with j
                 node -v            #just checking the version
                 npm -v
 
+            - name: just to check working directory before
+              run: pwd
+            
+            - name: changing Working directory               # to change the working dir it can be default, or specific to the job,or task
+              working-directory: /home/runners/             # any location from pwd
+              run: |
+                pwd
+
     parallel-job:                                            #job no. 2
         runs-on: macos-latest
         steps:
