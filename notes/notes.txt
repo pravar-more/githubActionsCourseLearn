@@ -1,9 +1,19 @@
+
+>>>>>
+What is github actions:
+    a tool that lets you automate software development workflows 
+
+>>>>>
+workflow:
+    are configurable, automated processes, setup in the repo, to perform certain task, 
     Workflow File Tasks:
-    testing your code
-    sending a slack message
-    publishing a package
-    openeing an issue 
-    deploying applications
+        testing your code
+        sending a slack message
+        publishing a package
+        sending a slack message
+        openeing an issue 
+        deploying applications
+
 
 Events:
   Repos events: push pullm request, issue
