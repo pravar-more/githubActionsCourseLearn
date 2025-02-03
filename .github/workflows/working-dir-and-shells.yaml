@@ -11,6 +11,18 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
+ 
+  display-wd-info2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: know path before change
+        run: pwd
+        
+      - name: change wd
+        working-directory: /home/runner
+        run: |
+          pwd
+      
 
   display-wd-info-WINDOWS:
     runs-on: windows-latest
