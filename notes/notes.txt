@@ -84,10 +84,10 @@ defualts:
         working-directory: <if we want an custom or required location>
 
 jobs:                                                        # jobs array with job object having 'jobs' as key
-    run-shell-commands:                                      # job no. 1 this is a job objedct in here we will be defining steps,                                                                       platform or os to run our job 
+    run-shell-commands:                                      # job no. 1 this is a job objedct in here we will be defining steps, platform or os to run our job 
         runs-on: ubuntu-latest                               #defining platform    
         steps:                                               #now we will defining the steps
-            - name: echo a string                            # object for each steps containig a name, defining what to do here echo a                                                                  string 
+            - name: echo a string                            # object for each steps containig a name, defining what to do here echo a string 
               run: echo "hello World"                        # now the shell command to perform the task
             - name: multiline commands
               run: |                                         #  | pipe character to define multiple lines of commands
@@ -97,7 +97,7 @@ jobs:                                                        # jobs array with j
             - name: just to check working directory before
               run: pwd
             
-            - name: changing Working directory               # to change the working dir it can be default, or specific to the job,or                                                                   task
+            - name: changing Working directory               # to change the working dir it can be default, or specific to the job,or task
               working-directory: /home/runner             # any location from pwd
               run: |
                 pwd
@@ -113,7 +113,7 @@ jobs:                                                        # jobs array with j
             run:
                 shell: pwsh                                   # definign the default shell to run the job, here pwsh = powershell
         
-            needs: run-shell-commands                         #this key is added to make the job dependent on another ... it can                                                                        have job-id or [array of job id]
+            needs: run-shell-commands                         #this key is added to make the job dependent on another ... it can have job-id or [array of job id]
         steps:
             - name: echo a string
               run: Write-Output "Windows String dependent on run-shell-commands job"
@@ -129,12 +129,12 @@ jobs:                                                        # jobs array with j
                 Write-Output $env:GITHUB_WORKSPACE
     build:                                                    #  A build job
         runs-on: ubuntu-latest
-        strategy:                                             # the strategy is defined to control the behaviour of job to get retire                                                                    because if it fails in multiple attempts the workflow status marked as                                                                   failed, >> can configure the workflow to stop all further job executions                                                                 if a job fails multiple times, or to continue trying other jobs even if                                                                  one fails.
-            fail-fast: false
-            matrix:
-                include:
-                  - node-version: 14
-                  - node-version: 16
+        strategy:                                             # the strategy is defined to control the behaviour of job to get retire  because if it fails in multiple attempts the workflow status marked as failed, >> can configure the workflow to stop all further job executions if a job fails multiple times, or to continue trying other jobs even if one fails.
+        fail-fast: false
+        matrix:
+            include:
+                - node-version: 14
+                - node-version: 16
         steps:
           - name: Checkout repository
             uses: actions/checkout@v2
