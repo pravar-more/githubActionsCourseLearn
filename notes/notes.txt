@@ -98,7 +98,7 @@ jobs:                                                        # jobs array with j
               run: pwd
             
             - name: changing Working directory               # to change the working dir it can be default, or specific to the job,or task
-              working-directory: /home/runners/             # any location from pwd
+              working-directory: /home/runner             # any location from pwd
               run: |
                 pwd
 
