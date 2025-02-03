@@ -215,6 +215,31 @@ jobs:
 
 -------------------------------------------------------------------    
 
+diefference between workflow run, job run , and attempt in gh actions
+In GitHub Actions, the terms workflow run, job run, and attempt refer to different levels of execution within a workflow:
+
+Workflow Run: This is the highest level of execution. A workflow run represents the entire execution of a workflow triggered by an event (e.g., a push to a repository). It includes all the jobs that are defined in the workflow2.
+
+Job Run: A workflow run consists of one or more jobs. Each job represents a set of steps that run in a specific environment (e.g., Ubuntu, Windows)3. Jobs can run in parallel or sequentially, depending on how they are defined.
+
+Attempt: Within a job run, there can be multiple attempts. An attempt represents a single execution of the job3. If a job fails and is retried, each retry is considered a separate attempt
+
+>>>>>>>>>
+                
+                example to illustrate the hierarchy:
+                
+                Workflow Run: Triggered by a push event.
+                
+                    Job Run 1: Runs on Ubuntu.
+                    
+                        Attempt 1: First execution of the job.
+                        
+                        Attempt 2: Retry of the job after a failure.
+                    
+                    Job Run 2: Runs on Windows.
+                    
+                        Attempt 1: First execution of the job
+
 -------------------------------------------------------------------    
 
 -------------------------------------------------------------------    
