@@ -92,6 +92,9 @@ jobs:                                                        # jobs array with j
               run: sw_vers
     dependent-job:                                            #job no. 3
         runs-on: windows-latest
+        defaults:
+            run:
+                shell: pwsh                                   # definign the default shell to run the job, here pwsh = powershell
         needs: run-shell-commands                             #this key is added to make the job dependent on another ... it can have jobid or [array of job id]
         steps:
             - name: echo a string
