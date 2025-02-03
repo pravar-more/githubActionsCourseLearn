@@ -74,6 +74,11 @@ LOCATION:     .github/workflows/workflowFile1.yaml
 name: First Workflow
 on: [push]                                                   #the events to be triggered
 
+on:                                                          # this on when the push is directed to be on specific branch (here main)
+    push:
+        branch:
+            - main
+
 jobs:                                                        # jobs array with job object having 'jobs' as key
     run-shell-commands:                                      # job no. 1 this is a job objedct in here we will be defining steps, platform or os to run our job 
         runs-on: ubuntu-latest                               #defining platform    
@@ -95,7 +100,7 @@ jobs:                                                        # jobs array with j
         defaults:
             run:
                 shell: pwsh                                   # definign the default shell to run the job, here pwsh = powershell
-        needs: run-shell-commands                             #this key is added to make the job dependent on another ... it can have jobid or [array of job id]
+        needs: run-shell-commands                             #this key is added to make the job dependent on another ... it can have job-id or [array of job id]
         steps:
             - name: echo a string
               run: Write-Output "Windows String dependent on run-shell-commands job"
