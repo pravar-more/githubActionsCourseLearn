@@ -18,9 +18,9 @@ jobs:
     steps:
       - name: wd path and list
         run: |
-          pwd
-          ls -al
-          Write-Output $GITHUB_SHA
-          Write-Output $GITHUB_REPOSITORY
-          Write-Output $GITHUB_WORKSPACE
+          Get-Location
+          dir
+          Write-Output $env:GITHUB_SHA
+          Write-Output $env:GITHUB_REPOSITORY
+          Write-Output $env:GITHUB_WORKSPACE
         
