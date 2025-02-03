@@ -42,6 +42,26 @@ Runner MAchine:
 * Actions are the individual tasks that make up your jobs
 * also can schedule
 
+ACTIONS::
+    we use run keys in the jobs to run simple commands
+    in order to run more complex tasks , we use actions
+  
+
+***  SO the ACtions in GH ACtions is a reusabele unit of code that can be refernced, in order to execute that action 
+     using actions do things -->
+        interacting with github API
+        some other API
+        deploy code
+        send sms
+        send slack message
+
+TYPES:
+    1. javascript actions: runs directly in runner machine, and on all os
+    2. Actions written in Docker: freedom to write action in any language, and use any tool, are little but slower
+        need to pull and build docker container into your machine
+    3. composite actions: combine multiple workflow steps into actions
+-------------------------------------------------------------------    
+
 YAML Format
     is superset of json
     * key: value
@@ -297,8 +317,11 @@ Attempt: Within a job run, there can be multiple attempts. An attempt represents
                         Attempt 1: First execution of the job
 
 -------------------------------------------------------------------    
+SIMPLE ACTIONS::::
 
--------------------------------------------------------------------    
+
+
+
 
 -------------------------------------------------------------------    
 
