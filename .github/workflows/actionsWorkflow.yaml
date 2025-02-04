@@ -15,3 +15,15 @@ jobs:
         id: var_greet
       - name: output
         run: echo "result= ${{ steps.var_greet.outputs.time }}"
+
+  checkout-using-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: list files before
+        run: ls -a
+      - name: using checkout actions
+        uses: actions/checkout@v4
+        
+      - name: list files after
+        run:  ls -a
+      
