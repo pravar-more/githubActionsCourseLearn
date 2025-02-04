@@ -3,11 +3,11 @@ on: [issues]
 
 jobs: 
   check:
-  runs-on: ubuntu-latest
-  steps:
-    - run: |
-        echo $GITHUB_SHA
-        echo $GITHUB_REF
-        echo "new LIne___________"
-    - uses: actions/checkout@v4
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REF
+          echo "new LIne___________"
+      - uses: actions/checkout@v4
     
