@@ -3,6 +3,7 @@ on: [push]
 defaults:
   run:
     shell: bash
+  runs-on: ububntu-latest
 
 jobs:
   checkout-and-display-files:
