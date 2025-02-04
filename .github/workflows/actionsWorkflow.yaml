@@ -11,7 +11,7 @@ jobs:
       - name: simple action
         uses: actions/hello-world-javascript-action@v1
         with: 
-          who-to-greet: PRAVAR
+          who-to-greet: PRAVAR More
         id: var_greet
       - name: output
         run: echo "result= ${{ steps.var_greet.outputs.time }}"
