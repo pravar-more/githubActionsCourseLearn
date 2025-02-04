@@ -317,11 +317,7 @@ Attempt: Within a job run, there can be multiple attempts. An attempt represents
                         Attempt 1: First execution of the job
 
 -------------------------------------------------------------------    
-SIMPLE ACTIONS::::
-
-
-
-
+SIMPLE ACTIONS>>>
 
 -------------------------------------------------------------------    
 
