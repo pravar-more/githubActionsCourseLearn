@@ -319,6 +319,21 @@ Attempt: Within a job run, there can be multiple attempts. An attempt represents
 -------------------------------------------------------------------    
 SIMPLE ACTIONS>>>
 
+name:
+on:
+jobs:
+    jobs_simple-actions:
+        runs-on: 
+        steps:
+            - name: SIMPLE ACTION
+              uses:                                         #instead of run we use 'uses' in order to use the pre defined or made action blocks, 
+                                                            # format:::   is private repo or your own repo--> just refrence the path  like .github/actions/<>
+                                                            # or if is public --> from Github Actions  Place refrenced as - actions
+                                                            # and then the repo and then @ then the commit id, specific version, branch name, or a tag or version
+                                                            # for eg. --> uses: actions/hello-world-javascript-action@v1 , or actions/hello-world-javascript-action@v1.1.2 or actions/hello-world-javascript-action@<commit id> or actions/hello-world-javascript-action@main the branch    --> branch is least stable, specifing version or commid id is more stable
+              
+              with:                                         # this keyword used to specify actions to recieve inputs --> we can find all required inputs filed, the output result in documented in the respective repo.    
+
 -------------------------------------------------------------------    
 
 -------------------------------------------------------------------    
