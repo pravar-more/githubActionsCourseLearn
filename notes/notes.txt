@@ -326,13 +326,36 @@ jobs:
         runs-on: 
         steps:
             - name: SIMPLE ACTION
+              id: <any varaible name eg. greet>             # this is to refrence this task's output of action to be used by another task
               uses:                                         #instead of run we use 'uses' in order to use the pre defined or made action blocks, 
                                                             # format:::   is private repo or your own repo--> just refrence the path  like .github/actions/<>
                                                             # or if is public --> from Github Actions  Place refrenced as - actions
                                                             # and then the repo and then @ then the commit id, specific version, branch name, or a tag or version
                                                             # for eg. --> uses: actions/hello-world-javascript-action@v1 , or actions/hello-world-javascript-action@v1.1.2 or actions/hello-world-javascript-action@<commit id> or actions/hello-world-javascript-action@main the branch    --> branch is least stable, specifing version or commid id is more stable
               
-              with:                                         # this keyword used to specify actions to recieve inputs --> we can find all required inputs filed, the output result in documented in the respective repo.    
+              with:                                         # this keyword used to specify actions to recieve inputs --> we can find all required inputs filed, the output result in documented in the respective repo. 
+            - name: SIMPLE ACTION OUT
+              run: echo " this is result: ${{ steps.greet.outputs.time }}"     # here we are refrenceing the output for the actions using
+                                                                               # greet -> the id, outputs -> function or the next step. time -> the output variable in this case.
+
+
+
+
+>>>> so the actual action goes like
+name: actions workflow
+on: [push]
+jobs: 
+    simple-actions-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: simple action
+              id: var_greet
+              uses: actions/hello-world-javascript-action@v1
+              with:
+                who-to-greet: PRAVAR
+            - name: output
+              run: echo "result= ${{ steps.var_greet.outputs.time }}
+
 
 -------------------------------------------------------------------    
 
