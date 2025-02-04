@@ -1,5 +1,5 @@
 name: runs on issue creation
-on: [issue]
+on: [issues]
 
 jobs: 
   check:
