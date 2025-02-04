@@ -3,8 +3,7 @@ on: [push]
 defaults:
   run:
     shell: bash
-  runs-on: ubuntu-latest
-
+  
 jobs:
   checkout-using-actions:
     runs-on: ubuntu-latest
