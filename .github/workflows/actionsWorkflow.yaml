@@ -1,6 +1,16 @@
 name: action Workflow
 on: [push]
 defaul:
-  runs-on:
+  run:
     shell: bash
+  runs-on: ubuntu-latest
 jobs: 
+  simple-action-job:
+    steps:
+      - name: simple action
+        uses: actions/hello-world-javascript-action@v1
+        with: 
+          who-to-greet: PRAVAR
+        id: var_greet
+      - name: output
+        run: echo "result= ${{ steps.var_greet.outputs.time }}"
