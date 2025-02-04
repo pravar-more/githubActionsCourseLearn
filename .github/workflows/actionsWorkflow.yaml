@@ -1,9 +1,9 @@
 name: action Workflow
 on: [push]
-default:
+defaults:
   run:
     shell: bash
-  runs-on: ubuntu-latest
+ 
 jobs: 
   simple-action-job:
     steps:
