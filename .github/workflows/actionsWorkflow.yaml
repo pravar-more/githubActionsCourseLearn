@@ -3,11 +3,10 @@ on: [push]
 defaults:
   run:
     shell: bash
-  runs-on: ubuntu-latest
   
- 
 jobs: 
   simple-action-job:
+    runs-on: ubuntu-latest
     steps:
       - name: simple action
         uses: actions/hello-world-javascript-action@v1
