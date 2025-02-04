@@ -1,6 +1,6 @@
 name: action Workflow
 on: [push]
-defaul:
+default:
   run:
     shell: bash
   runs-on: ubuntu-latest
