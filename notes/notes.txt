@@ -24,14 +24,46 @@ Events:
   external events: sending a POST request to a REST API
   Schedule Time:
   Manually: pressing the run workflow button
-
+---------------------------------------------------------------------------------
 Events are the triggers that start your workflows. These could be activities like pushing code to a repository, creating a pull request, or scheduling a time-based event. Some common events include:
-    push: Triggered when code is pushed to a repository.
-    pull_request: Triggered when a pull request is created or updated.
-    schedule: Triggered based on a cron schedule.
+    1. push: Triggered when code is pushed to a repository.
+        by default will run on all push
+        can be made specific for branches
+        >>>    on:
+                    push:
+                        branch:
+                            - main
+
+
+
+
+
+    2. pull_request: Triggered when a pull request is created or updated.
+        by default this also run the workflow for all pull requests but can be specified for specified types
+        >>>    on:    
+                    pull_request:
+                        types: [ assigned, openend, review_request_removed, closed, .....]
+
+
+    3. Issues: triggered when opereations happen on the issue, a feature to traclk task, enhancements, a board to put some ideas, basically git area used to share not only code but conversations about the code, new feature to be integrated....
+        >>>    on:         
+                    issues:
+                        types: [opened, assigned....]
+    
+
+
+    4. pull_request_target:
+        similar to pull request events but are triggered  on base branch of pull request, are useful for actions that needs to access the base branch
+        >>>    on:
+                    pull_request_target:
+                        types: [opened]
+    
+    5. schedule: Triggered based on a cron schedule.
     workflow_dispatch: Manually triggered by a user.
 
 
+
+---------------------------------------------------------------------------------
 Runner MAchine:
   github hosted runners : win, linux, macos with tools installed
   self hosted runners: more customizable, more control over hardware, install packages.
@@ -367,6 +399,8 @@ The issues in this case runs the workflow all the time, either issue, openend, c
             - unlocked, milestone, locked, assigned....
             - deleted
 by default: its all
+
+>>> pull_request_target
 
 -------------------------------------------------------------------    
 
