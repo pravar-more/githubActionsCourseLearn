@@ -399,9 +399,28 @@ The issues in this case runs the workflow all the time, either issue, openend, c
             - unlocked, milestone, locked, assigned....
             - deleted
 by default: its all
-
+################################
 >>> pull_request_target
 
+    name: pull request comment 
+    on: 
+        pull_request_target:
+            types: [opened]
+    jobs:
+        pr-comment:
+            runs-on: ubuntu-latest 
+            steps:
+                - name comment on new PRs
+                  uses: actions/github-script@v6
+                  with:
+                      script: |
+                        github.rest.issues.createComment({
+                            owner: context.repo.owner,
+                            repo: context.repo ,
+                            issue_number: context.issues.number ,
+                            body: 'Thanks for contributing',
+                        )};
+                          
 -------------------------------------------------------------------    
 
 -------------------------------------------------------------------    
