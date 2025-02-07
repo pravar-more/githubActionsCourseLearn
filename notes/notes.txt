@@ -357,6 +357,16 @@ jobs:
               run: echo "result= ${{ steps.var_greet.outputs.time }}
 ####
 The issues in this case runs the workflow all the time, either issue, openend, closed>  can define the activity type to specify when to run the issue.
+>> can be defined by::
+    on:
+        issues:
+            - opened
+            - edited
+            - reopened
+            - closed
+            - unlocked, milestone, locked, assigned....
+            - deleted
+by default: its all
 
 -------------------------------------------------------------------    
 
