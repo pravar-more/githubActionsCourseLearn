@@ -57,7 +57,14 @@ Events are the triggers that start your workflows. These could be activities lik
         >>>    on:
                     pull_request_target:
                         types: [opened]
-    
+
+    ## A pull request event requires approval if its forked, but pull_request_target does not require any approval to run the workflow.
+
+    5. workflow_run: can trigger workflow to run based on the execution of another workflow
+    >>>
+        types: [competed, requested, in_progress]
+
+
     5. schedule: Triggered based on a cron schedule.
     workflow_dispatch: Manually triggered by a user.
 
