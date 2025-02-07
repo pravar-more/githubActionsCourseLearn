@@ -355,7 +355,8 @@ jobs:
                 who-to-greet: PRAVAR
             - name: output
               run: echo "result= ${{ steps.var_greet.outputs.time }}
-
+####
+The issues in this case runs the workflow all the time, either issue, openend, closed>  can define the activity type to specify when to run the issue.
 
 -------------------------------------------------------------------    
 
